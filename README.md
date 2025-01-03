@@ -18,7 +18,7 @@ Implementa el Repository Pattern para una mejor separación de responsabilidades
 
 🔧 Configuración:
 
-1. Clonar el repositorio desde GitHub: https://github.com/noc-monitor/noc-monitor.git
+1. Clonar el repositorio desde GitHub: https://github.com/MaiGdev/NOC-Monitor.git
 2. Instalar las dependencias: En la carpeta del proyecto, ejecutar `npm install` o `yarn install`.
 3. Configurar las credenciales de la base de datos: Crear un archivo `.env` en la raíz del proyecto y agregar las siguientes variables de entorno:
    - PORT: 3000
