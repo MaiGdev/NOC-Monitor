@@ -5,7 +5,7 @@ NOC-Monitor es una aplicación diseñada para supervisar el estado de servicios 
 🏗️ Arquitectura y Diseño:
 
 Basado en Clean Architecture, asegurando modularidad y facilidad de mantenimiento.
-Implementa el Repository Pattern para una mejor separación de responsabilidades y abstracción de acceso a datos.
+Implementa el Repository Pattern y Adapter Pattern para una mejor separación de responsabilidades y abstracción de acceso a datos.
 
 📡 Características principales:
 

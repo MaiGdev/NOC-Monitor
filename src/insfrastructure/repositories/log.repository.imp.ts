@@ -1,10 +1,10 @@
 import { LogDatasource } from "../../domain/datasources/log-datasource";
 import { LogEntity, LogSeverityLevel } from "../../domain/entities/log.entitiy";
-import { LogRepositoy } from "../../domain/repository/log.repository";
+import { LogRepository } from "../../domain/repository/log.repository";
 
 
 
-export class LogRepositoryImplementation implements LogRepositoy {
+export class LogRepositoryImplementation implements LogRepository {
   /*   private logDataSource: LogDatasource; */
 
   constructor(private readonly logDataSource: LogDatasource) {}
