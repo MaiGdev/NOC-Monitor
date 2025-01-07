@@ -3,3 +3,5 @@ dist/
 logs/
 package-lock.json
 .env/
+mongo/
+postgres/

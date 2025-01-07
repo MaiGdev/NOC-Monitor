@@ -1,26 +1,28 @@
-📌 Descripción del Repositorio
+### 📌 Repository Description  
 
-NOC-Monitor es una aplicación diseñada para supervisar el estado de servicios web mediante la verificación de URLs. Si un servicio no responde correctamente, el sistema genera logs, envía alertas por correo y almacena los eventos en una base de datos con múltiples fuentes de datos (datasources).
+**NOC-Monitor** is an application designed to monitor the status of web services by checking URLs. If a service does not respond correctly, the system generates logs, sends email alerts, and stores events in a database with multiple data sources, including **filesystem, MongoDB, and PostgreSQL** (using Docker).  
 
-🏗️ Arquitectura y Diseño:
+### 🏗️ Architecture & Design  
 
-Basado en Clean Architecture, asegurando modularidad y facilidad de mantenimiento.
-Implementa el Repository Pattern y Adapter Pattern para una mejor separación de responsabilidades y abstracción de acceso a datos.
+- Based on **Clean Architecture**, ensuring modularity and ease of maintenance.  
+- Implements the **Repository Pattern** and **Adapter Pattern** for better separation of concerns and abstraction of data access.  
 
-📡 Características principales:
+### 📡 Key Features  
 
-🔍 Monitoreo de URLs para detectar fallos en los servicios.
-📝 Registro de eventos y errores en logs.
-📩 Notificaciones por correo cuando un servicio está inactivo.
-💾 Almacenamiento de eventos en una base de datos con múltiples datasources.
-📊 Panel de control para visualizar el historial de incidentes (si aplica).
-🚀 Ideal para equipos de NOC y administradores que requieren un sistema automatizado de monitoreo y alertas.
+🔍 URL monitoring to detect service failures.  
+📝 Event and error logging.  
+📩 Email notifications when a service is down.  
+💾 Event storage in a database with **multiple data sources**:  
+   - **Filesystem** for local logs.  
+   - **MongoDB** and **PostgreSQL** (managed via Docker) for structured and unstructured data storage.  
+🚀 Ideal for **NOC teams** and **administrators** who need an automated monitoring and alert system.  
 
-🔧 Configuración:
+### 🔧 Setup  
 
-1. Clonar el repositorio desde GitHub: https://github.com/MaiGdev/NOC-Monitor.git
-2. Instalar las dependencias: En la carpeta del proyecto, ejecutar `npm install` o `yarn install`.
-3. Configurar las credenciales de la base de datos: Crear un archivo `.env` en la raíz del proyecto y agregar las siguientes variables de entorno:
-   - PORT: 3000
-   - MAILER_EMAIL:
-   - MAILER_SECRET:
+1. Clone the repository from GitHub: [NOC-Monitor](https://github.com/MaiGdev/NOC-Monitor.git)  
+2. Install dependencies: In the project folder, run `npm install` or `yarn install`.  
+3. Configure environment variables.  
+4. Start the databases (**MongoDB & PostgreSQL**) using `docker compose up -d`.  
+5. Run the application using `npm run dev`.  
+
+Let me know if you need any refinements! 🚀

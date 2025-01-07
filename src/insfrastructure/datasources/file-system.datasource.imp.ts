@@ -2,7 +2,7 @@ import fs from "fs";
 import { LogDatasource } from "../../domain/datasources/log-datasource";
 import { LogEntity, LogSeverityLevel } from "../../domain/entities/log.entitiy";
 
-export class FileSystemDataSourceImplementation implements LogDatasource {
+export class FileSystemDataSourceImp implements LogDatasource {
   private readonly logPath = "logs/";
   private readonly allLogsPath = "logs/logs-all.log";
   private readonly mediumLogsPath = "logs/logs-medium.log";
@@ -47,8 +47,9 @@ export class FileSystemDataSourceImplementation implements LogDatasource {
 
   private getLogsFromfile = (path: string): LogEntity[] => {
     const content = fs.readFileSync(path, "utf8");
+    if (content === "") return [];
 
-    /*     const logs = content
+    /*     const logs =  content
       .split("\n")
       .map((log) => LogEntity.fromJson(JSON.parse(log))); */
     const logs = content.split("\n").map(LogEntity.fromJson);

@@ -1,3 +1,4 @@
+import { EmailService } from "../../../presentation/email/email.service";
 import { LogSeverityLevel } from "../../entities/log.entitiy";
 import { SaveLogs } from "../logs/save-logs";
 
@@ -11,7 +12,8 @@ type ErrorCallback = (error: string) => void | undefined;
 export class CheckService implements CheckServiceUseCase {
   constructor(
     private readonly successCallback: SuccessCallback,
-    private readonly saveLogs: SaveLogs
+    private readonly saveLogs: SaveLogs,
+    private readonly emailService: EmailService
   ) {}
 
   public async execute(url: string): Promise<boolean> {
@@ -27,6 +29,11 @@ export class CheckService implements CheckServiceUseCase {
         origin: "check-service.ts",
       });
       this.successCallback() && this.successCallback();
+
+      this.emailService.sendEmailWithFileSystemLogs([
+        "maikelgomezmurillo@gmail.com",
+        "mgomzmu@gmail.com",
+      ]);
 
       return true;
     } catch (error) {

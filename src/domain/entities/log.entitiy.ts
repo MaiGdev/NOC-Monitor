@@ -20,24 +20,38 @@ export class LogEntity {
   public origin: string;
 
   constructor(opciones: LogEntityOptions) {
-    const {level, message, createdAt = new Date()} = opciones;
+    const { level, message, createdAt = new Date() } = opciones;
     this.message = message;
     this.level = level;
     this.createdAt = createdAt;
     this.origin = opciones.origin;
   }
 
-  static fromJson(json: any): LogEntity {
+  static fromJson(json: string): LogEntity {
+    
+    json = (json === "") ? "{}": json
+
     const { message, level, createdAt, origin } = JSON.parse(json);
 
     const log = new LogEntity({
       level,
       message,
       createdAt,
-      origin
+      origin,
     });
     log.createdAt = new Date(createdAt);
 
     return log;
   }
+
+  static fromObject = (obj: { [key: string]: any }): LogEntity => {
+    const { message, level, createdAt, origin } = obj;
+    const log = new LogEntity({
+      level,
+      message,
+      origin,
+      createdAt,
+    });
+    return log;
+  };
 }
