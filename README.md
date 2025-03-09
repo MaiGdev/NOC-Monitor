@@ -24,5 +24,3 @@
 3. Configure environment variables.  
 4. Start the databases (**MongoDB & PostgreSQL**) using `docker compose up -d`.  
 5. Run the application using `npm run dev`.  
-
-Let me know if you need any refinements! 🚀
